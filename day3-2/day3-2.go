@@ -60,11 +60,15 @@ func GetLeast(n Node) string {
 }
 
 func main() {
-	file, err := os.Open("/home/ptrj96/go/src/AOC2021/day3/input.txt")
+	path, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer file.Close()
+
+	file, err := os.Open(path + "/day3/input.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	root := Node{num: 0}
 	scanner := bufio.NewScanner(file)

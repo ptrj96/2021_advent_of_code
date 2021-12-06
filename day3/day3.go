@@ -10,11 +10,15 @@ import (
 )
 
 func main() {
-	file, err := os.Open("/home/ptrj96/go/src/AOC2021/day3/input.txt")
+	path, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer file.Close()
+
+	file, err := os.Open(path + "/day3/input.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	scanner := bufio.NewScanner(file)
 	res := []int{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
