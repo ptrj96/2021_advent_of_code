@@ -15,13 +15,9 @@ func main() {
 		newFish := totalFish[0]
 		for j := 0; j < 8; j++ {
 			totalFish[j] = totalFish[j+1]
-
-			if j == 6 {
-				totalFish[j] += newFish
-			} else if j == 7 {
-				totalFish[j+1] = newFish
-			}
 		}
+		totalFish[6] += newFish
+		totalFish[8] = newFish
 	}
 
 	sum := 0
