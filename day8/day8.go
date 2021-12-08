@@ -9,21 +9,10 @@ import (
 	"strings"
 )
 
-func checkString(dict map[string]bool, input string) bool {
-	return false
-}
-
 func sortStr(str string) string {
 	uStr := strings.Split(str, "")
 	sort.Strings(uStr)
 	return strings.Join(uStr, "")
-}
-
-func getTop(one, seven string) string {
-	for i := 0; i < len(one); i++ {
-		seven = strings.ReplaceAll(seven, string(one[i]), "")
-	}
-	return seven
 }
 
 func getFour(one, four string) string {
